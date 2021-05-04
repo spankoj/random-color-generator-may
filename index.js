@@ -1,5 +1,6 @@
-// NPM package
+// NPM packages
 const randomColor = require('randomcolor');
+const chalk = require('chalk');
 
 //Command line arguments
 const luminosity = process.argv[2];
@@ -13,8 +14,8 @@ const color = randomColor({
 
 console.log(color);
 
-const pound = '#';
+// const pound = '#';
 
 for (i = 0; i < 5; i++) {
-  console.log(pound);
+  console.log(chalk.hex(color).bold('#')); // makes pound with the rendom color
 }
