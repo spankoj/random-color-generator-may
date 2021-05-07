@@ -23,14 +23,14 @@
 
 Option 1
 
-> node index.js _argument1_ _argument2_
->
+Typing: node index.js **argument1** **argument2**
+
 > - argument1: Luminosity value _light_ / _dark_
 > - argument2: Hue value (for instance: _blue_ / _red_ / _green_)
 
 Option 2
 
-> node index.js **ask**
->
+Typing: node index.js **ask**
+
 > - Luminosity will be asked to input _light_ / _dark_
 > - Hue will be asked (for instance: _blue_ / _red_ / _green_)
