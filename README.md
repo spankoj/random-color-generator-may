@@ -25,12 +25,12 @@ Option 1
 
 Typing: node index.js **argument1** **argument2**
 
-> - argument1: Luminosity value _light_ / _dark_
-> - argument2: Hue value (for instance: _blue_ / _red_ / _green_)
+> - argument1: Hue value (for instance: _blue_ / _red_ / _green_)
+> - argument2: Luminosity value _light_ / _dark_
 
 Option 2
 
 Typing: node index.js **ask**
 
-> - Luminosity will be asked to input _light_ / _dark_
 > - Hue will be asked (for instance: _blue_ / _red_ / _green_)
+> - Luminosity will be asked to input _light_ / _dark_
