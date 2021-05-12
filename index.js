@@ -12,19 +12,19 @@ const luminosity = process.argv[3];
 // Refactoring#1: Create function of drawing the pattern with colord text -> Chalk pkg
 
 function drawing(color) {
-  for (i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i++) {
     console.log(chalk.hex(color).bold('##########################'));
   }
-  for (i = 0; i < 1; i++) {
+  for (let i = 0; i < 1; i++) {
     console.log(chalk.hex(color).bold(`###                    ###`));
   }
-  for (i = 0; i < 1; i++) {
+  for (let i = 0; i < 1; i++) {
     console.log(chalk.hex(color).bold(`###      ${color}       ###`));
   }
-  for (i = 0; i < 1; i++) {
+  for (let i = 0; i < 1; i++) {
     console.log(chalk.hex(color).bold(`###                    ###`));
   }
-  for (i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i++) {
     console.log(chalk.hex(color).bold('##########################'));
   }
 }
