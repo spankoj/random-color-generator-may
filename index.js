@@ -6,17 +6,37 @@ const prompt = require('prompt');
 
 // Command line arguments
 
-const luminosity = process.argv[2];
-const hue = process.argv[3];
+const hue = process.argv[2];
+const luminosity = process.argv[3];
+
+// Refactoring#1: Create function of drawing the pattern with colord text -> Chalk pkg
+
+function drawing(color) {
+  for (i = 0; i < 3; i++) {
+    console.log(chalk.hex(color).bold('##########################'));
+  }
+  for (i = 0; i < 1; i++) {
+    console.log(chalk.hex(color).bold(`###                    ###`));
+  }
+  for (i = 0; i < 1; i++) {
+    console.log(chalk.hex(color).bold(`###      ${color}       ###`));
+  }
+  for (i = 0; i < 1; i++) {
+    console.log(chalk.hex(color).bold(`###                    ###`));
+  }
+  for (i = 0; i < 3; i++) {
+    console.log(chalk.hex(color).bold('##########################'));
+  }
+}
 
 // Ask user input with Promt pkg
 
-if (luminosity === 'ask') {
+if (hue === 'ask') {
   prompt.start();
-  prompt.get(['luminosity', 'hue'], function (err, result) {
+  prompt.get(['hue', 'luminosity'], function (err, result) {
     console.log('Command-line input received:');
-    console.log('  luminosoty: ' + result.luminosity);
     console.log('  hue: ' + result.hue);
+    console.log('  luminosoty: ' + result.luminosity);
 
     // Generating Random color with luminosity and hue options
 
@@ -25,23 +45,7 @@ if (luminosity === 'ask') {
       hue: result.hue,
     });
 
-    // Drawing the pattern with colord text:Chalk pkg
-
-    for (i = 0; i < 3; i++) {
-      console.log(chalk.hex(color).bold('##########################'));
-    }
-    for (i = 0; i < 1; i++) {
-      console.log(chalk.hex(color).bold(`###                    ###`));
-    }
-    for (i = 0; i < 1; i++) {
-      console.log(chalk.hex(color).bold(`###      ${color}       ###`));
-    }
-    for (i = 0; i < 1; i++) {
-      console.log(chalk.hex(color).bold(`###                    ###`));
-    }
-    for (i = 0; i < 3; i++) {
-      console.log(chalk.hex(color).bold('##########################'));
-    }
+    drawing(color);
   });
 }
 // In case no input run CLI app with random color
@@ -51,19 +55,5 @@ else {
     hue: hue,
   });
 
-  for (i = 0; i < 3; i++) {
-    console.log(chalk.hex(colorGiven).bold('##########################'));
-  }
-  for (i = 0; i < 1; i++) {
-    console.log(chalk.hex(colorGiven).bold(`###                    ###`));
-  }
-  for (i = 0; i < 1; i++) {
-    console.log(chalk.hex(colorGiven).bold(`###      ${colorGiven}       ###`));
-  }
-  for (i = 0; i < 1; i++) {
-    console.log(chalk.hex(colorGiven).bold(`###                    ###`));
-  }
-  for (i = 0; i < 3; i++) {
-    console.log(chalk.hex(colorGiven).bold('##########################'));
-  }
+  drawing(colorGiven);
 }
