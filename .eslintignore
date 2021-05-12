@@ -1,5 +1,5 @@
 *.config.js
 build
-
+test.js
 # Next.js build folder
 .next
